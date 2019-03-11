@@ -17,3 +17,16 @@ code {
   height: 120px;
   margin: 10px 0;
 }
+.nav-style {
+  text-align: right;
+}
+
+.nav-style li {
+  list-style: none;
+  display: inline;
+  margin: 0 10px;
+}
+
+.nav-style a {
+  text-decoration: none;
+}
