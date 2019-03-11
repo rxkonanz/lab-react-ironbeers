@@ -11,15 +11,6 @@ class RandomBeer extends Component {
         beer: {}
     }
 
-    displayRandomBeer = () => {
-        return <div className="col-lg-3 eachBeer">
-                    <img src={this.state.beer.image_url} className="beerPicture"></img>
-                    <b><h3>{this.state.beer.name}</h3></b>
-                    <h6>{this.state.beer.tagline}</h6>
-                    <p>Created by: {this.state.beer.contributed_by}</p>
-                </div>
-    }
-
     componentDidMount() {
         axios.get("https://ironbeer-api.herokuapp.com/beers/random")
         .then(response => {
@@ -32,7 +23,12 @@ class RandomBeer extends Component {
     render(){
         return (<div class="container">
                     <div class="row">
-                        {this.displayRandomBeer()}
+                        <div className="col-lg-3 eachBeer">
+                            <img src={this.state.beer.image_url} className="beerPicture"></img>
+                            <b><h3>{this.state.beer.name}</h3></b>
+                            <h6>{this.state.beer.tagline}</h6>
+                            <p>Created by: {this.state.beer.contributed_by}</p>
+                        </div>
                     </div>
                 </div>)
     }
